@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tarot Journal</title>
+</head>
+<body>
+    <h1>Tarot Journal Generator: Body/Mind/Spirit Spread</h1>
+<p>Enter the information from your spread below, then click "Generate" to produce a journal entry that you can copy/paste into your own journal.</p>
+<h3>Name:</h3> <input id="userName" value="Your Name"><br>
+<h3>Body Card: </h3><input id="bodyCard" value = "Card Name/Number">
+<h3>Mind Card: </h3><input id="mindCard" value = "Card Name/Number">>
+<h3>Spirit Card: </h3><input id="spiritCard" value = "Card Name/Number"><br>
+<h3>Question or Events of the Day: </h3><textarea id="events" style="width:300px;height:200px;" placeholder="Example: Interview for new job, woke up late."></textarea><br>
+<h3>Interpretation: </h3><textarea id="interpretation" style="width:300px;height:200px;" placeholder="Example: While my body wants _____, my mind is telling me _____, yet my spirit is urging me to _____."></textarea>
+<br>
+  
+    <button id="create">Generate</button>
+
+  <div id="entryInfo"></p>
+
+  <script>
+   
+
+
+    function myEntry() {
+       var d = new Date();
+       var n = d.toString();
+
+        var username = document.getElementById("userName").value;
+        var bodyCard = document.getElementById("bodyCard").value;
+        var mindCard = document.getElementById("mindCard").value;
+        var spiritCard = document.getElementById("spiritCard").value;
+        var events = document.getElementById("events").value;
+        var interpretation = document.getElementById("interpretation").value;
+
+        var header = 'Today\'s entry for <b>' + username + '</b>:<br>'; 
+        var date = '<b>Date:</b> ' + n + '<br>';
+        var cards = '<b>Body Card: </b>' + bodyCard + '<br>' + '<b>Mind Card: </b>' + mindCard + '<br>' + '<b>Spirit Card: </b>' + spiritCard + '<br>';
+        var todayEvents = '<b>Today\'s Events: </b>' + events + '<br>';
+        var interpret = '<b>Interpretation: </b>' + interpretation;
+        document.getElementById("entryInfo").innerHTML = header + date + cards + todayEvents + interpret;
+
+    }
+    
+    document.getElementById("create").addEventListener('click', myEntry);
+  </script>
+ 
+</body>
+</html>
