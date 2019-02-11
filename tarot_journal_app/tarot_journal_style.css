@@ -1,0 +1,23 @@
+body {
+    background-color: darkslategrey;
+    color: white;
+    font-size: 1.1em;
+}
+.firstcharacter {
+	color: red;
+	float: left;
+	font-size: 75px;
+	line-height: 60px;
+	padding-top: 4px;
+	padding-right: 8px;
+	padding-left: 3px;
+	
+}
+
+.textbox {
+	background-color: lightgrey;
+	color: black;
+	border: 1px;
+	border-style: double;
+}
+
