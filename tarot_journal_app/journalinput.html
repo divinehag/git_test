@@ -3,24 +3,35 @@
 <head>
   <meta charset="utf-8">
   <title>Tarot Journal</title>
-  
+  <link href="https://fonts.googleapis.com/css?family=Emilys+Candy" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="tarot_journal_style.css" />
 
 </head>
 <body>
-    <h1>Tarot Journal Generator: Body/Mind/Spirit Spread</h1>
-<p>Enter the information from your spread below, then click "Generate" to produce a journal entry that you can copy/paste into your own journal.</p>
-<h3>Name:</h3> <input id="userName" value="Your Name"><br>
-<h3>Body Card: </h3><input id="bodyCard" value = "Card Name/Number">
-<h3>Mind Card: </h3><input id="mindCard" value = "Card Name/Number">>
-<h3>Spirit Card: </h3><input id="spiritCard" value = "Card Name/Number"><br>
-<h3>Question or Events of the Day: </h3><textarea id="events" style="width:300px;height:200px;" placeholder="Example: Interview for new job, woke up late."></textarea><br>
-<h3>Interpretation: </h3><textarea id="interpretation" style="width:300px;height:200px;" placeholder="Example: While my body wants _____, my mind is telling me _____, yet my spirit is urging me to _____."></textarea>
-<br>
-  
-    <button id="create">Generate</button>
+<h1 class="title">Tarot Journal Generator: Body/Mind/Spirit Spread</h1>
+<hr>
+<div class="row">
 
-  <div id="entryInfo"></p>
+<div class="column">
+	<p class="drop-cap">This tool allows you to generate a simple blog/journal entry by inputting information from a Body/Mind/Spirit (or any three-card) tarot spread. It will automatically generate the time and date of the reading, so be sure to edit before posting if your entering information from an older spread! <br><br>Enter your information, then click "Generate." The entry will appear on the right side of the page.<br><br>The format for this spread and reading comes from <a href="http://www.aeclectic.net/tarot/books/tarot-for-your-self/" target=new">Mary K. Greer's <i>Tarot for Your Self</i></a>. If you'd like to learn more about tarot, here are some great online resources that I found helpful:<ul><li><a href="https://www.biddytarot.com/" target="blank">Biddy Tarot</a></li><li><a href="https://kawaiitarot.com/">Kawaii Tarot</a></li><li><a href="http://blog.littleredtarot.com/" target="blank">Little Red Tarot Blog</a> (archived as of Oct. 2018)</li></ul></p>
+ 
+ </div>
+ 
+<div class="column">	
+	<h3>Name:</h3> <input class="textbox" id="userName" value="Your Name"><br>
+	<h3>Body Card: </h3><input class="textbox" id="bodyCard" value = "Card Name/Number">
+	<h3>Mind Card: </h3><input class="textbox" id="mindCard" value = "Card Name/Number">
+	<h3>Spirit Card: </h3><input class="textbox" id="spiritCard" value = "Card Name/Number"><br>
+	<h3>Question or Events of the Day: </h3><textarea class="textbox" id="events" style="width:300px;height:200px;" placeholder="Example: Interview for new job, woke up late."></textarea><br>
+	<h3>Interpretation: </h3><textarea class="textbox" id="interpretation" style="width:300px;height:200px;" placeholder="Example: While my body wants _____, my mind is telling me _____, yet my spirit is urging me to _____."></textarea>
+	<br>
+  <button id="create">Generate</button>
+    
+</div>
+
+<div class="column">
+
+  <div id="entryInfo">
 
   <script>
    
@@ -37,10 +48,10 @@
         var events = document.getElementById("events").value;
         var interpretation = document.getElementById("interpretation").value;
 
-        var header = 'Today\'s entry for <b>' + username + '</b>:<br>'; 
-        var date = '<b>Date:</b> ' + n + '<br>';
-        var cards = '<b>Body Card: </b>' + bodyCard + '<br>' + '<b>Mind Card: </b>' + mindCard + '<br>' + '<b>Spirit Card: </b>' + spiritCard + '<br>';
-        var todayEvents = '<b>Today\'s Events: </b>' + events + '<br>';
+        var header = '<h2>Today\'s entry for <i>' + username + '</i>:</h2>'; 
+        var date = '<b>Date:</b> ' + n + '<br><br>';
+        var cards = '<b>Body Card: </b>' + bodyCard + '<br><br>' + '<b>Mind Card: </b>' + mindCard + '<br><br>' + '<b>Spirit Card: </b>' + spiritCard + '<br><br>';
+        var todayEvents = '<b>Today\'s Events: </b>' + events + '<br><br>';
         var interpret = '<b>Interpretation: </b>' + interpretation;
         document.getElementById("entryInfo").innerHTML = header + date + cards + todayEvents + interpret;
 
@@ -48,6 +59,10 @@
     
     document.getElementById("create").addEventListener('click', myEntry);
   </script>
- 
+	</div>
+ <img class="img" src="tarot.jpg" border=0>
+ </div>
+
+ </div>
 </body>
 </html>
